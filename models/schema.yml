@@ -38,3 +38,20 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+
+  - name: stg_payments
+    description: This model stages payments data from seed csv file
+    columns:
+      - name: payment_id
+        description: Primary key
+        tests:
+        #  - unique
+        # - not_null
+      - name: order_id
+        description: Foreign key
+        tests:
+      - name: payment_method
+        description: Type of payment used
+        tests:
+      - name: amount
+        description: Dollar amount for order
